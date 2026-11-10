@@ -1,0 +1,16 @@
+allowBuilds:
+  '@firebase/util': false
+  '@prisma/engines': false
+  '@swc/core': false
+  cypress: true
+  esbuild: true
+  prisma: false
+  protobufjs: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - vite@8.3.1
+  - '@tanstack/router-cli@1.167.45'
+  - '@tanstack/router-core@1.171.38'
+  - '@tanstack/router-generator@1.167.45'
+  - '@tanstack/router-plugin@1.168.47'
+  - lucide-react@1.58.0

@@ -1,0 +1,31 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+src/routeTree.gen.ts
+todos.json
+
+# npm run db:export dumps - encrypted columns stay ciphertext, but the rest
+# (emails, names, phone numbers, …) is plaintext PII, so these never get
+# committed.
+backups/
+
+# heroui-agents-md
+.heroui-docs/
+
+# Local Vercel folder
+.vercel
+
+.env.production
+.env.*.local
+
+# local ledger of web-ui components in use
+web-ui-usage.md

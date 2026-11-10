@@ -1,0 +1,10 @@
+export { About } from "./About";
+export { Contact } from "./Contact";
+export { Faq } from "./Faq";
+export { Industries } from "./Industries";
+export { Landing } from "./Landing";
+export { Process } from "./Process";
+export { Roles } from "./Roles";
+export { RolesMarquee } from "./RolesMarquee";
+export { TeamBuilder } from "./TeamBuilder";
+export { WhyGss } from "./WhyGss";

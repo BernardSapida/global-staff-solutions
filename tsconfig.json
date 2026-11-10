@@ -1,0 +1,39 @@
+{
+  "include": ["**/*.ts", "**/*.tsx"],
+  /* src/components/web-ui is a verbatim vendored copy of the Component Labs source
+     (see its own internal.ts for why nothing in it may be rewritten). Its *.test.*
+     files were never part of this project's typecheck when the same code shipped
+     as an npm package - node_modules is excluded by default,
+     and tsc never saw them. Vendoring relocated the files under src/, which this
+     tsconfig's include pattern now reaches; excluding them here keeps behaviour
+     identical instead of surfacing the package's own pre-existing test-fixture type
+     debt as a build break in every downstream project. */
+  "exclude": ["src/components/web-ui/**/*.test.ts", "src/components/web-ui/**/*.test.tsx"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    /* No `baseUrl`: it is deprecated in TS 6 and makes `tsc` abort with TS5101
+       BEFORE typechecking any source, which silently hides every error in this
+       app. `paths` resolves relative to this file when baseUrl is absent. */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    /* Linting */
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  }
+}
